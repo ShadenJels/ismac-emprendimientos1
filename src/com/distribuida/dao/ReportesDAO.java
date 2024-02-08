@@ -18,5 +18,5 @@ public interface ReportesDAO {
 	
 	public void del(int id);
 	
-	public List<Reportes> findAll(String busqueda);
+	public List<Reportes> findCustom(String busqueda);
 }

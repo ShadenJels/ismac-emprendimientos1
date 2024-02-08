@@ -48,9 +48,9 @@ public class ReportesServiceImpl implements ReportesService {
 	}
 
 	@Override
-	public List<Reportes> findAll(String busqueda) {
+	public List<Reportes> findCustom(String busqueda) {
 		// TODO Auto-generated method stub
-		return reportesDAO.findAll(busqueda);
+		return reportesDAO.findCustom(busqueda);
 	}
 
 	

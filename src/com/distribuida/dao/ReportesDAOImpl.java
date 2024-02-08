@@ -38,6 +38,7 @@ public class ReportesDAOImpl implements ReportesDAO {
 	}
 
 	@Override
+	@Transactional
 	public void add(Reportes reportes) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
@@ -45,6 +46,7 @@ public class ReportesDAOImpl implements ReportesDAO {
 	}
 
 	@Override
+	@Transactional
 	public void up(Reportes reportes) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
@@ -52,23 +54,24 @@ public class ReportesDAOImpl implements ReportesDAO {
 	}
 
 	@Override
+	@Transactional
 	public void del(int id) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(findOne(id));
 	}
 
-	@Override
-	public List<Reportes> findAll(String busqueda) {
-		// TODO Auto-generated method stub
-		Session session = sessionFactory.getCurrentSession();
-		Query<Reportes> query = session.createQuery("SELECT FROM Reportes au WHERE au.idReporte =: idReporte"
-				+ "au.reporte LIKE : busqueda"
-				+ "au.fechaReporte LIKE : busqueda"
-				+ "au.descripcion LIKE : busqueda", Reportes.class);
 	
-		query.setParameter("busqueda", "%"+busqueda+"%");
-				return query.getResultList();
-	}
+	@Override
+	@Transactional
+	public List<Reportes> findCustom(String busqueda) {
+	    Session session = sessionFactory.getCurrentSession();
+	    Query<Reportes> query = session.createQuery("FROM Reportes au WHERE "
+	            + "au.reporte LIKE :busqueda OR "
+	            + "au.descripcion LIKE :busqueda OR "
+	            , Reportes.class);
 
+	    query.setParameter("busqueda", "%" + busqueda + "%");
+	    return query.getResultList();
+	}
 }
