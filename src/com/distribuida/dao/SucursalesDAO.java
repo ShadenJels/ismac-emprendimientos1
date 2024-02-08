@@ -2,6 +2,7 @@ package com.distribuida.dao;
 
 import java.util.List;
 
+
 import com.distribuida.entities.Sucursales;
 
 public interface SucursalesDAO {
@@ -15,4 +16,6 @@ public List<Sucursales> findAll();
 	public void up(Sucursales sucurdales);
 	
 	public void del(int id);
+	
+	public List<Sucursales> findAll(String busqueda);
 }

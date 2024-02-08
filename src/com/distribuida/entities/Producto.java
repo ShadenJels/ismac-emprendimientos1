@@ -50,14 +50,14 @@ public class Producto {
 
 
 	public Producto(int idProducto, String numeroProducto, String descripcion, double precioProducto, int stock,
-				String imgProducto, Categoria categoria) {
+				String imgProducto) {
 			this.idProducto = idProducto;
 			this.numeroProducto = numeroProducto;
 			this.descripcion = descripcion;
 			this.precioProducto = precioProducto;
 			this.stock = stock;
 			this.ImgProducto = imgProducto;
-			this.categoria = categoria;
+			
 		}
 
 

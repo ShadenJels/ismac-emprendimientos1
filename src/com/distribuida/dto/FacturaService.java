@@ -3,7 +3,6 @@ package com.distribuida.dto;
 import java.util.Date;
 import java.util.List;
 
-import com.distribuida.entities.Cliente;
 import com.distribuida.entities.Factura;
 import com.distribuida.entities.FacturaDetalle;
 
@@ -20,4 +19,5 @@ public interface FacturaService {
 	public int findMax();
 	public int findOne(String numFactura);
 	
+
 }

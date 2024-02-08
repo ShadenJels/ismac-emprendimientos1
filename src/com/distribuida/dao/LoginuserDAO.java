@@ -16,4 +16,3 @@ public interface LoginuserDAO {
 	
 	public void del(int id);
 }
-

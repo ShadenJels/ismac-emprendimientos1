@@ -23,7 +23,7 @@ public class FacturaDAOImpl implements FacturaDAO {
 	public List<Factura> findAll() {
 		// TODO Auto-generated method stub
 		Session	 session = sessionFactory.getCurrentSession();	
-		return session.createQuery("from facturacion", Factura.class).getResultList();
+		return session.createQuery("from Factura", Factura.class).getResultList();
 		
 	}
 
@@ -68,7 +68,7 @@ public class FacturaDAOImpl implements FacturaDAO {
 	public int findMax() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("SELECT max(fa.idFactura) FROM facturacion fa");
+		Query query = session.createQuery("SELECT max(fa.idFactura) FROM Factura fa");
 		return (int) query.getSingleResult();
 	}
 
@@ -77,11 +77,10 @@ public class FacturaDAOImpl implements FacturaDAO {
 	public int findOne(String numFactura) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		Query<Factura> query = session.createQuery("select fa"
-				+ "from facturacion fa"
-				+ "Where fa.numFactura like : keyBusqueda ", Factura.class);
-		
+		Query<Factura> query = session.createQuery(" select fa "
+				+ "from Factura fa "
+				+ "where fa.numFactura like : keyBusqueda ", Factura.class);
+		query.setParameter("keyBusqueda", "%"+numFactura+"%");				
 		return query.getResultList().get(0).getIdFactura();
 	}
-
 }

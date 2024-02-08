@@ -22,7 +22,7 @@ public class FormaPagoDAOImpl implements FormaPagoDAO {
 	public List<FormaPago> findAll() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		return session.createQuery("from Formaspago",FormaPago.class).getResultList();
+		return session.createQuery("from FormaPago",FormaPago.class).getResultList();
 	}
 
 	@Override

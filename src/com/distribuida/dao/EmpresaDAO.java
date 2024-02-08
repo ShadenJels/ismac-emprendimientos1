@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.distribuida.entities.Empresa;
 
+
 public interface EmpresaDAO {
 
 public List<Empresa> findAll();
@@ -15,4 +16,6 @@ public List<Empresa> findAll();
 	public void up(Empresa empresa);
 	
 	public void del(int id);
+	
+	public List<Empresa> findAll(String busqueda);
 }

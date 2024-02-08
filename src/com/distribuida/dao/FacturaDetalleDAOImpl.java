@@ -23,7 +23,7 @@ public class FacturaDetalleDAOImpl implements FacturaDetalleDAO {
 	public List<FacturaDetalle> findAll() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		return session.createQuery("from factura_detalles",FacturaDetalle.class).getResultList();
+		return session.createQuery("from FacturaDetalle", FacturaDetalle.class).getResultList();
 	}
 
 	@Override
@@ -59,5 +59,4 @@ public class FacturaDetalleDAOImpl implements FacturaDetalleDAO {
 		session.delete(findOne(id));
 
 	}
-
 }

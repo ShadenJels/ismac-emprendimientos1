@@ -38,13 +38,13 @@ public class Empresa_producto {
 	public Empresa_producto() {}
 
 	
-	public Empresa_producto(int idempresa_producto, String producto, String descripcion, Empresa idempresa,
-			Producto idproducto) {
+	public Empresa_producto(int idempresa_producto, String producto, String descripcion/*, Empresa idempresa,
+			Producto idproducto*/) {
 		this.idempresa_producto = idempresa_producto;
 		this.producto = producto;
 		this.descripcion = descripcion;
-		this.idempresa = idempresa;
-		this.idproducto = idproducto;
+//		this.idempresa = idempresa;
+//		this.idproducto = idproducto;
 	}
 
 

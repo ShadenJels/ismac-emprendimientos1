@@ -42,11 +42,11 @@ public class Categoria {
 	//Constructor por parametro
 	
 	
-	public Categoria(int idCategoria, String categoria, String descripcion, Seccion seccion) {
+	public Categoria(int idCategoria, String categoria, String descripcion) {
 		this.idCategoria = idCategoria;
 		this.Categoria = categoria;
 		this.Descripcion = descripcion;
-		this.seccion = seccion;
+	
 	}
 
 

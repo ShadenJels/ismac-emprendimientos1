@@ -2,6 +2,7 @@ package com.distribuida.dao;
 
 import java.util.List;
 
+
 import com.distribuida.entities.Perfil_empresa;
 
 
@@ -16,4 +17,6 @@ public List<Perfil_empresa> findAll();
 	public void up(Perfil_empresa perfil_empresa);
 	
 	public void del(int id);
+	
+	public List<Perfil_empresa> findAll(String busqueda);
 }

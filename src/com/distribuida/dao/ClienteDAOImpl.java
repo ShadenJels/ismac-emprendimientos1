@@ -8,7 +8,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.distribuida.entities.cliente;
+import com.distribuida.entities.Cliente;
+
 
 public class ClienteDAOImpl implements ClienteDAO {
 
@@ -19,28 +20,28 @@ public class ClienteDAOImpl implements ClienteDAO {
 		
 		@Override
 		@Transactional
-		public List<cliente> findAll() {
+		public List<Cliente> findAll() {
 			// TODO Auto-generated method stub
 			
 			Session session = sessionFactory.getCurrentSession();
-			return session.createQuery("from Clientes", cliente.class).getResultList();
+			return session.createQuery("from Clientes", Cliente.class).getResultList();
 			
 
 		}
 
 		@Override
 		@Transactional
-		public cliente findOne(int id) {
+		public Cliente findOne(int id) {
 			// TODO Auto-generated method stub
 			Session session = sessionFactory.getCurrentSession();
 			
-			return session.get(cliente.class, id);
+			return session.get(Cliente.class, id);
 			
 		}
 
 		@Override
 		@Transactional
-		public void add(cliente cliente) {
+		public void add(Cliente cliente) {
 			// TODO Auto-generated method stub
 			Session session = sessionFactory.getCurrentSession();
 			//cliente cliente1 = new cliente();
@@ -51,7 +52,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 
 		@Override
 		@Transactional
-		public void up(cliente cliente) {
+		public void up(Cliente cliente) {
 			// TODO Auto-generated method stub
 			Session session = sessionFactory.getCurrentSession();
 			session.saveOrUpdate(cliente);
@@ -68,7 +69,3 @@ public class ClienteDAOImpl implements ClienteDAO {
 
 
 	}
-
-
-
-

@@ -14,9 +14,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name = "loginCliente")
+@Table(name = "login_cliente")
 
-public class loginCliente {
+public class LoginCliente {
 	
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,14 +44,14 @@ public class loginCliente {
     
 	
 	
-	public loginCliente () {
+	public LoginCliente () {
 		
 		
 	}
 	
 
 	
-public loginCliente (int id,String user,String password,String newpassword,String confirmpassword,
+public LoginCliente (int id,String user,String password,String newpassword,String confirmpassword,
 		String loginCorreo,String loginToken,String SessiontimeIn,String SessiontimeOUT,String  Sessiontiempo) {
 	
 	

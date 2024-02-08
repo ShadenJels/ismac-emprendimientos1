@@ -32,7 +32,7 @@ public class Pedido {
 	
 	@ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JoinColumn(name="fk_idCliente")
-	private cliente cliente;
+	private Cliente cliente;
 	public Pedido() {}
 
 	

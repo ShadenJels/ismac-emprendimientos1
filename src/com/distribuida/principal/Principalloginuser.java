@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.distribuida.dao.LoginuserDAO;
-import com.distribuida.entities.Loginuser;
+import com.distribuida.entities.LoginUser;
 
 
 public class Principalloginuser {
@@ -17,10 +17,10 @@ public class Principalloginuser {
 		LoginuserDAO loginuserDAO = context.getBean("loginuserDAOImpl",LoginuserDAO.class);
 		
 		
-		List<Loginuser> user = loginuserDAO.findAll();
+		List<LoginUser> user = loginuserDAO.findAll();
 		
 		//Impresion
-		for(Loginuser item : user){
+		for(LoginUser item : user){
      		System.out.println(item.toString());
 		}
 		

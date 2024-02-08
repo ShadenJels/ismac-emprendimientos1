@@ -51,10 +51,11 @@ public class Empresa_detalles {
 	
 	public Empresa_detalles() {	}
 
-	public Empresa_detalles(int idDetalleEmpresa, Date fechaInicio, String tipoEmpresa, double encuestapopularidad,
-			String comentarios, String horariosAtencion, String chatUsuario, String chatCliente,
-			Sucursales sucursales) {
 	
+
+	public Empresa_detalles(int idDetalleEmpresa, Date fechaInicio, String tipoEmpresa, double encuestapopularidad,
+			String comentarios, String horariosAtencion, String chatUsuario, String chatCliente/*, Empresa empresa,
+			Sucursales sucursales*/) {
 		this.idDetalleEmpresa = idDetalleEmpresa;
 		this.FechaInicio = fechaInicio;
 		this.tipoEmpresa = tipoEmpresa;
@@ -63,8 +64,11 @@ public class Empresa_detalles {
 		this.HorariosAtencion = horariosAtencion;
 		this.ChatUsuario = chatUsuario;
 		this.ChatCliente = chatCliente;
-		this.sucursales = sucursales;
+//		this.empresa = empresa;
+//		this.sucursales = sucursales;
 	}
+
+
 
 	public int getIdDetalleEmpresa() {
 		return idDetalleEmpresa;

@@ -37,13 +37,20 @@ public class Perfil_empresa {
 	public Perfil_empresa() {}
 	
 
-	public Perfil_empresa(int idPerfilEmpresa, String logo, String opcColor1, String opcColor2, String gamaColor) {
+
+
+	public Perfil_empresa(int idPerfilEmpresa, String logo, String opcColor1, String opcColor2, String gamaColor/*,
+			Empresa empresa*/) {
+
 		this.idPerfilEmpresa = idPerfilEmpresa;
 		this.logo = logo;
 		this.OpcColor1 = opcColor1;
 		this.OpcColor2 = opcColor2;
 		this.GamaColor = gamaColor;
+//		this.empresa = empresa;
 	}
+
+
 
 
 	public String getLogo() {
@@ -77,12 +84,25 @@ public class Perfil_empresa {
 	public void setIdPerfilEmpresa(int idPerfilEmpresa) {
 		this.idPerfilEmpresa = idPerfilEmpresa;
 	}
+	
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
+
 
 	@Override
 	public String toString() {
-		return "perfil_empresa [idPerfilEmpresa=" + idPerfilEmpresa + ", logo=" + logo + ", OpcColor1=" + OpcColor1
-				+ ", OpcColor2=" + OpcColor2 + ", GamaColor=" + GamaColor + "]";
+		return "Perfil_empresa [idPerfilEmpresa=" + idPerfilEmpresa + ", logo=" + logo + ", OpcColor1=" + OpcColor1
+				+ ", OpcColor2=" + OpcColor2 + ", GamaColor=" + GamaColor + ", empresa=" + empresa + "]";
 	}
+
+
 
 
 

@@ -48,6 +48,7 @@ public class Factura {
 	@JoinColumn(name="fk_idFormaPago")
 	private FormaPago formaPago;
 	
+	
 	public Factura(int idFactura, String numFactura, Date fechaFactura, double totalNeto, double iva, double total) {
 		this.idFactura = idFactura;
 		this.numFactura = numFactura;
@@ -142,10 +143,13 @@ public class Factura {
 		this.formaPago = formaPago;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Factura [idFactura=" + idFactura + ", numFactura=" + numFactura + ", fechaFactura=" + fechaFactura
 				+ ", totalNeto=" + totalNeto + ", iva=" + iva + ", total=" + total + ", cliente=" + cliente
 				+ ", pedido=" + pedido + ", formaPago=" + formaPago + "]";
 	}
+
+
 }

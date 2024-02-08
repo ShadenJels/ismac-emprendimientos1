@@ -1,48 +1,47 @@
 package com.distribuida.principal;
 
-import java.util.List;
+import javax.persistence.Column;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.distribuida.dao.SeccionDAO;
-import com.distribuida.entities.Categoria;
-import com.distribuida.entities.Seccion;
+import com.distribuida.dao.ProductoDAO;
+import com.distribuida.entities.Producto;
 
-public class PrincipalSeccion {
+public class PrincipalProducto {
 
-	
+
 	public static void main(String[] args) {
+		
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
-		SeccionDAO seccionDAO = context.getBean("seccionDAOImpl",SeccionDAO.class);
+		ProductoDAO productoDAO = context.getBean("productoDAOImpl",ProductoDAO.class);
 	
 		
+		Producto producto1 = new Producto(0,"numeroProducto","descripcion",10.23,1,"jfkdjf");
+		productoDAO.add(producto1);
+		System.out.println(productoDAO.findOne(11));
 		
-		//CRUD
 	
-		Seccion seccion1 = new Seccion(0,"Seccion","Descripcion");
-		seccionDAO.add(seccion1);
-		System.out.println(seccionDAO.findOne(8));
 		
-		
-		Seccion seccion3 = new Seccion(8,"Seccion11","Descripcion11");
-		seccionDAO.up(seccion3);
-		System.out.println(seccionDAO.findOne(8));
+		Producto producto3 = new Producto(0,"numeroProducto","descripcion",10.23,1,"jfkdjf");
+		productoDAO.up(producto3);
+		System.out.println(productoDAO.findOne(11));
 				
-		try { seccionDAO.del(8); } catch (Exception e) {e.printStackTrace();	}
+		try { productoDAO.del(11); } catch (Exception e) {e.printStackTrace();	}
 	
 		
-		for(Seccion seccion:seccionDAO.findAll()) {
-			System.out.println(seccion.toString());
+		for(Producto producto:productoDAO.findAll()) {
+			System.out.println(producto.toString());
 //			
 		}
 		
 		
-		
-		
+//		
+//		//CRUD
+//
 //		//ADD	
-//		Seccion seccion1 = new Seccion(0,"Seccion","Descripcion");
-//		seccionDAO.add(seccion1);
+////		Producto producto1 = new Producto(0,"Seccion","Descripcion","ds","ds","ds");
+////		productoDAO.add(producto1);
 //		
 //		//UP
 ////		Cliente cliente2 = new Cliente(39,"1566464","Paul","Llulluna","Tumbaco","2954445454","correo@gmail.com");
@@ -50,7 +49,7 @@ public class PrincipalSeccion {
 //		
 //		//DEL
 ////		Cliente cliente3 = new Cliente(39,"1566464","Paul","Llulluna","Tumbaco","2954445454","correo@gmail.com");
-//		seccionDAO.del(39);
+//		productoDAO.del(39);
 //		
 //		//FIND ALL
 //		
@@ -73,9 +72,9 @@ public class PrincipalSeccion {
 //		
 //		
 //		//System.out.println(clientes.toString());
-
-		
-		
+//
+//		
+//		
 		context.close();
 
 		

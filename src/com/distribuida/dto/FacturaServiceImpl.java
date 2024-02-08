@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.distribuida.dao.ClienteDAO;
+import com.distribuida.dao.Empresa_productoDAO;
 import com.distribuida.dao.FacturaDAO;
 import com.distribuida.dao.FacturaDetalleDAO;
 import com.distribuida.dao.FormaPagoDAO;
@@ -28,7 +29,7 @@ public class FacturaServiceImpl implements FacturaService {
 	@Autowired
 	private FormaPagoDAO formapagoDAO;
 	@Autowired
-	private Empresa_ProductoDAO empresa_productoDAO;
+	private Empresa_productoDAO empresa_productoDAO;
 	@Autowired
 	private FacturaDAO facturaDAO;
 	@Autowired
@@ -70,10 +71,10 @@ public class FacturaServiceImpl implements FacturaService {
 				descuento1, descuento2);
 		
 		Factura factura = facturaDAO.findOne(idFactura);
-		Empresa_producto empresaproducto = empresa_productoDAO.finOne(idEmpresaFactura);
+		Empresa_producto empresaproducto = empresa_productoDAO.findOne(idEmpresaFactura);
 		
 		facturaDetalle.setFactura(factura);
-		facturaDetalle.setIdFacturaDetalle(idFacturaDetalle);
+		facturaDetalle.setEmpresaProducto(empresaproducto);		
 		
 		facturaDetalleDAO.add(facturaDetalle);
 		
@@ -90,9 +91,5 @@ public class FacturaServiceImpl implements FacturaService {
 		// TODO Auto-generated method stub
 		return facturaDAO.findOne(numFactura);
 	}
-
-
-
-
 
 }
